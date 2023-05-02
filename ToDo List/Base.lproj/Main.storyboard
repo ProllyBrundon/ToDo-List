@@ -44,6 +44,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fDG-bB-KaO">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="3cQ-eO-1gT">
+                            <connections>
+                                <action selector="editButtonPressed:" destination="BYZ-38-t0r" id="Ieq-7h-8vc"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zvt-cZ-TU7">
                             <connections>
                                 <segue destination="cRv-AW-hK0" kind="presentation" identifier="AddDetail" id="TDt-RW-FaY"/>
@@ -51,6 +56,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addBarButton" destination="Zvt-cZ-TU7" id="4e5-DO-XlF"/>
                         <outlet property="tableView" destination="eEB-cR-5tR" id="6VO-pL-VXk"/>
                     </connections>
                 </viewController>
@@ -140,7 +146,11 @@
                                 <action selector="cancelButtonPressed:" destination="a5M-QZ-nVo" id="IW7-hi-RQs"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Upp-KS-4be"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Upp-KS-4be">
+                            <connections>
+                                <segue destination="H2B-G7-ecM" kind="unwind" unwindAction="unwindFromDetailWithSegue:" id="BeV-17-NiB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="j3M-0z-VNK" id="joW-gS-wNw"/>
@@ -150,6 +160,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPe-Ye-P11" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="H2B-G7-ecM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2924.4274809160306" y="-27.464788732394368"/>
         </scene>
